@@ -1,2 +1,0 @@
-# TwitchClone
-Created with CodeSandbox
