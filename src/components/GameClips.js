@@ -19,11 +19,15 @@ let useStyles = makeStyles(theme => ({
     margin: theme.spacing(1)
   },
   title: {
-    fontSize: 14
+    padding: 50
   },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
+  },
+  card: {
+    minHeight: "363px",
+    display: "grid"
   }
 }));
 
@@ -55,7 +59,7 @@ export default function GameClips() {
           variant="h2"
           gutterBottom
           component="h2"
-          style={{ padding: 50 }}
+          className={classes.title}
         >
           Popular Clips By Game
         </Typography>
@@ -63,7 +67,7 @@ export default function GameClips() {
         <Grid container spacing={3}>
           {games.map(game => (
             <Grid item xs={12} md={6} lg={4}>
-              <Card>
+              <Card className={classes.card}>
                 <CardMedia className={classes.media} image={game.box_art_url} />
                 <CardContent>
                   <Typography variant="h5" component="h2">
@@ -72,6 +76,7 @@ export default function GameClips() {
                 </CardContent>
 
                 <Button
+                  alignSelf="flex-end"
                   component={Link}
                   to={{
                     pathname: "top-clips/" + game.name,
