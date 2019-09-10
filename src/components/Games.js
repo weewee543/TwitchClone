@@ -16,7 +16,7 @@ let useStyles = makeStyles(theme => ({
     textAlign: "center"
   },
   title: {
-    fontSize: 14
+    padding: "50px"
   },
   media: {
     height: 0,
@@ -24,6 +24,10 @@ let useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1)
+  },
+  card: {
+    minHeight: "363px",
+    display: "grid"
   }
 }));
 
@@ -51,13 +55,13 @@ export default function Games() {
   return (
     <div className={classes.root}>
       <Container>
-        <Typography variant="h2" component="h2" style={{ padding: "50px" }}>
+        <Typography variant="h2" component="h2" className={classes.title}>
           Most Popular Games
         </Typography>
         <Grid container spacing={3}>
           {games.map(game => (
             <Grid item xs={12} md={6} lg={4}>
-              <Card>
+              <Card className={classes.card}>
                 <CardMedia className={classes.media} image={game.box_art_url} />
                 <CardContent>
                   <Typography variant="h8" component="h2">
@@ -66,6 +70,7 @@ export default function Games() {
                 </CardContent>
 
                 <Button
+                  alignSelf="flex-end"
                   component={Link}
                   to={{
                     pathname: "game/" + game.name,
