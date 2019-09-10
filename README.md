@@ -2,7 +2,7 @@
 
 <b>Built with MaterialUi, React-Router and ReactJS.</b>
 
-This project I wanted to get a feel of how to style my apps with MaterialUi and handle routing within the app. 
+This project I wanted to get a feel of how to style my apps with Material-UI and handle routing within the app. 
 
 I called my data from https://dev.twitch.tv/docs/api/ using Axios. After grabbing that data, I used Material-UI to display everything. 
 
